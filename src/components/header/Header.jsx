@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import headerTopLogo from '../../../public/icons/nav-top-logo.svg'
@@ -14,6 +14,15 @@ import './Header.css'
 
 
 const Header = () => {
+
+	const navList = [
+		"home",
+		"shop",
+		"skills",
+		"about",
+		"contact us"
+	]
+	const [sideNavOpen, setSideNavOpen] =  useState(false);
 	return (
 		<header>
 			<section className="header-top-section">
@@ -33,12 +42,26 @@ const Header = () => {
 
 			<section className="header-body-section">
 				<div className="company-logo">
-					<Link href="#">
+					<Link onClick={() => setSideNavOpen(true)} className="burger-icon-link" href="#">
 						<Icon className='burger-icon' icon="system-uicons:menu-hamburger" height={28} width={28} />
 					</Link>
 					<Link href="#">
 						<Image src={Logo} alt="Company-Logo" height={36} width={36} />
 					</Link>
+
+					{sideNavOpen && <div className="header-navbar-list-cont">
+						<Icon onClick={() => setSideNavOpen(false)} className="close-icon" icon="material-symbols-light:close" />
+						<div className="nav-lists">
+							{navList.map((list, index) => {
+								return (
+									<Link key={index} href='#' className="nav-items">
+										{list}
+									</Link>
+								)
+							} )}
+						</div>
+					</div>
+					}
 
 				</div>
 				<div className="company-title">

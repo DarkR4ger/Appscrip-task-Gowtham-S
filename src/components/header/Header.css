@@ -87,6 +87,11 @@
 	display: none;
 }
 
+.header-navbar-list-cont{
+	display: none;
+}
+
+
 /* tablet responsive */
 @media only screen and (min-width : 605px) and (max-width : 1024px) {
 	.header-footer-section nav {
@@ -138,6 +143,11 @@
 		display: block;
 	}
 
+	.burger-icon-link{
+		text-decoration: none;
+		color: black;
+	}
+
 	.header-footer-section nav {
 		display: flex;
 		width: 100%;
@@ -173,5 +183,41 @@
 
 	.header-body-section .header-nav-icons {
 		gap: 12px;
+	}
+
+	.header-navbar-list-cont{
+		display: flex;
+		min-height: 100vh;
+		width: 100vw;
+		position: absolute; 
+		top: 4%;
+		left: 0;
+		z-index: 1;
+		justify-content:center;
+		align-items: center;
+		background: white;
+		padding: 20px;
+	}
+	.nav-lists{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		justify-content:center;
+		align-items: center
+	}
+
+	.nav-items{
+		font-size: 24px;
+		text-decoration: none;
+		color: black;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	.close-icon{
+		position: absolute;
+		top: 5% ;
+		right: 10%;
+		font-size: 30px;
 	}
 }

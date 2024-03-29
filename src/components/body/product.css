@@ -249,5 +249,9 @@ hr{
 		width: 16px;
 		height: 16px;
 	}
+	hr{
+		color: #e5e5e5;
+		opacity: 30%;
+	}
 
 }
