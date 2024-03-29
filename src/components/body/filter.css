@@ -1,7 +1,7 @@
 .dropdown {
-	display: flex;
-	flex-direction: column;
-	background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
   gap: 24px;
 }
 
@@ -48,6 +48,19 @@
   align-items: center;
 }
 
+
+/* tablet-responsive */
+@media only screen and (max-width: 850px){
+  .label-title-dropdown{
+    font-size: 18px;
+  }
+  .filter-options{
+    font-size: 16px;
+  }
+
+}
+
+/* mobile-responsive */
 @media only screen and (max-width: 600px){
   .label-title-dropdown{
     font-size: 16px;

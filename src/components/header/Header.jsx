@@ -9,6 +9,9 @@ import ProfileIcon from '../../../public/icons/profile-logo.svg'
 import SearchIcon from '../../../public/icons/search-logo.svg'
 import HeartIcon from '../../../public/icons/heart-logo.svg'
 import ShoppingbagIcon from '../../../public/icons/shopping-bag-logo.svg'
+import MenuBarIcon from '../../../public/icons/menu-bar.svg'
+import CloseBarIcon from '../../../public/icons/close.svg'
+
 import { Icon } from '@iconify/react'
 import './Header.css'
 
@@ -42,15 +45,15 @@ const Header = () => {
 
 			<section className="header-body-section">
 				<div className="company-logo">
-					<Link onClick={() => setSideNavOpen(true)} className="burger-icon-link" href="#">
-						<Icon className='burger-icon' icon="system-uicons:menu-hamburger" height={28} width={28} />
+					<Link onClick={() => setSideNavOpen((prev) => !prev)} className="burger-icon-link" href="#">
+						<Image src={MenuBarIcon} className='burger-icon'  height={28} width={28} />
 					</Link>
 					<Link href="#">
 						<Image src={Logo} alt="Company-Logo" height={36} width={36} />
 					</Link>
 
 					{sideNavOpen && <div className="header-navbar-list-cont">
-						<Icon onClick={() => setSideNavOpen(false)} className="close-icon" icon="material-symbols-light:close" />
+						<Image src={CloseBarIcon} onClick={() => setSideNavOpen((prev) => !prev)} className="close-icon"  />
 						<div className="nav-lists">
 							{navList.map((list, index) => {
 								return (

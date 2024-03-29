@@ -81,13 +81,13 @@ const Product = ({ data }) => {
               }}
             >
               <input
-                style={{ width: "22px", height: "22px", cursor: "pointer" }}
                 id="customize"
                 type="checkbox"
+                className="custmoize-input"
               />
               <label
-                style={{ fontSize: "18px", cursor: "pointer" }}
                 htmlFor="customize"
+                className="customize-label"
               >
                 CUSTOMIZE
               </label>

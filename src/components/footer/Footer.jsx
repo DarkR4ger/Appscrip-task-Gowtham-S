@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import LanguageIcon from "../../../public/images/languages-img.png";
+import LanguageIcon from "../../../public/icons/Language.svg";
 import BlackArrow from "../../../public/icons/arrow-right.svg";
 import InstaIcon from "../../../public/icons/Insta.svg";
 import GpayIcon from "../../../public/icons/g-pay.svg";

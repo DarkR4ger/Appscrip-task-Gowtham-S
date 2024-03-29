@@ -44,7 +44,6 @@ footer p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   margin-top: 80px;
   padding-bottom: 30px;
 }
@@ -106,6 +105,7 @@ footer p {
   justify-content: space-between;
   margin-top: 50px;
   padding-bottom: 20px;
+  gap: 90px;
 }
 .socialLinksContainer {
   margin-bottom: 50px;
@@ -132,7 +132,13 @@ footer p {
 .mt20 {
   margin-top: 20px;
 }
+
+/* tablet-responsive */
 @media screen and (max-width: 888px) {
+  footer{
+    padding-left: 32px;
+    padding-right: 32px;
+  }
   .inputsBtn input {
     width: 250px;
   }
@@ -145,8 +151,15 @@ footer p {
   footer ul > li {
     font-size: 14px;
   }
+  .payments{
+    display:flex;
+    flex-wrap: wrap;
+    width: 60%;
+    gap: 20px;
+  }
 }
 
+/* mobile-responsive */
 @media screen and (max-width: 690px) {
   footer{
     padding-left: 16px;
@@ -183,6 +196,7 @@ footer p {
   }
   .actionsLinksContainer {
     flex-direction: column;
+    gap: 20px;
   }
   .inputsBtn input {
     width: 384px;
@@ -193,6 +207,7 @@ footer p {
   .payments {
     padding-top: 20px;
     flex-wrap: wrap;
+    width: 100%;
     row-gap: 10px;
   }
   .socialAcc img {
