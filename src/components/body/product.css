@@ -1,0 +1,149 @@
+#product-main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 96px;
+	padding-right: 96px;
+	margin-top: 2rem;
+}
+
+.product-top-section{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+
+.product-top-left-section{
+	display: flex;
+	align-items: center;
+}
+.total-items{
+	font-size: 18px;
+	font-weight: 800;
+	line-height: 40px;
+}
+
+.show-hide-filter-btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: rotate 0.5s ease-in-out;
+	user-select: none;
+	padding-left: 5rem;
+	gap: 8px;
+}
+.filters-mobile{
+	display: none;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+.dropdown {
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	position: relative;
+	user-select: none;
+}
+
+.sorting-btn{
+	display: flex;
+	background: #ffffff;
+	outline: none;
+	border: none;
+	gap: 8px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.options{
+	margin-top: 1rem;
+	list-style: none;
+	width: 280px;
+	z-index: 2;
+	background: #ffffff;
+	border-radius: 20px;
+	position: absolute;
+	top: 100%;
+	right: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	box-shadow: 10px 10px 10px gray;
+}
+
+.each-option{
+	display: flex;
+	font-size: 18px;
+	align-items: center;
+	padding-left: 38px;
+	padding-right: 38px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.each-option p{
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.each-option:hover{
+	background-color: gray;
+}
+
+.product-main-section{
+	margin-top: 24px;
+}
+
+.product-filter{
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	justify-content: center;
+	padding-bottom: 24px;
+}
+
+/* mobile-responsive */
+@media only screen and (max-width: 600px){
+	#product-main{
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	.product-top-section{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
+	}
+
+	.show-hide-filter-btn{
+		display: flex;
+		padding: 0;
+	}
+	.filters-mobile{
+		display: block;
+	}
+	.mobile-none{
+		display: none;
+	}
+
+	.sorting-btn p{
+		font-size: 14px;
+		font-weight: 800;
+	}
+	.sorting-btn{
+		gap: 2px;
+	}
+	.product-main-section {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+}
