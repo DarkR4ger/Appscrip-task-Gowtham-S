@@ -7,11 +7,26 @@ import "./product.css";
 import Image from "next/image";
 import FilterDropdown from "./Filter";
 import Link from "next/link";
-const Product = ({ data }) => {
+const Product = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getProducts = async () => {
+      let url = 'https://fakestoreapi.com/products'
+    try {
+      setLoading(true)
+      const res = await fetch(url);
+      const data = await res.json();
+      setProducts(data);
+      setLoading(false);
+    }
+    catch (error) {
+      alert("Something went wrong", error)
+    }
+  }
 
   useEffect(() => {
-    setProducts(data);
+    getProducts();
   }, []);
   const list = [
     "RECOMMENDED",
@@ -31,6 +46,7 @@ const Product = ({ data }) => {
     "RAW MATERIALS",
     "PATTERN",
   ];
+
 
   const [showFilter, setShowFilter] = useState(true);
 
@@ -99,13 +115,12 @@ const Product = ({ data }) => {
           </section>
         )}
         <section className="products-list">
-          {data &&
+          {loading ? (<div className="loading">Loding...</div>) :
             products.map((product, index) => {
-              const { id, title, price, image } = product;
+              const { title, price, image } = product;
               return (
                 <ProductContiner
                   key={index}
-                  id={id}
                   title={title}
                   price={price}
                   image={image}
@@ -118,7 +133,7 @@ const Product = ({ data }) => {
   );
 };
 
-const ProductContiner = ({ id, title, price, image }) => {
+const ProductContiner = ({ title, price, image }) => {
   const [like, setLike] = useState(false);
   return (
     <section className="product-container">
@@ -196,9 +211,8 @@ export const DropDownMenu = ({ options, defaultOption }) => {
                 )}
                 <p
                   style={{
-                    fontWeight: `${
-                      option == selectedOption ? "800" : "normal"
-                    }`,
+                    fontWeight: `${option == selectedOption ? "800" : "normal"
+                      }`,
                   }}
                 >
                   {option}
