@@ -3,6 +3,9 @@ import styles from "./page.module.css";
 import Header from "@/components/header/Header";
 import Title from "@/components/body/Title";
 import Product from "@/components/body/Product";
+import Footer from "@/components/footer/Footer";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 async function getData(){
   const url = 'https://fakestoreapi.com/products'
@@ -20,7 +23,10 @@ export default async function Home() {
     <main className={styles.main}>
       <Header />
       <Title />
-      <Product data={data} />
+      <Suspense fallback={<Loading />}>
+        <Product data={data} />
+      </Suspense>
+      <Footer />
     </main>
   );
 

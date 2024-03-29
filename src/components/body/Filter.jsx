@@ -21,58 +21,64 @@ const FilterDropdown = ({ FilterTitle }) => {
     setSelectedOptions([]);
   };
   return (
-    <div className="dropdown">
-      <div className="label">
-        <div onClick={() => setClick(!click)} className="label-title-dropdown">
-          <p>{FilterTitle}</p>
-          <Image
-            style={{
-              rotate: `${click ? "180deg" : "0deg"}`,
-              transition: "rotate 0.15s ease-in-out",
-            }}
-            src={Arrow}
-            alt="Arrow"
-            height={16}
-            width={16}
-          />
+    <>
+      <div className="dropdown">
+        <div className="label">
+          <div
+            onClick={() => setClick(!click)}
+            className="label-title-dropdown"
+          >
+            <p>{FilterTitle}</p>
+            <Image
+              style={{
+                rotate: `${click ? "180deg" : "0deg"}`,
+                transition: "rotate 0.15s ease-in-out",
+              }}
+              src={Arrow}
+              alt="Arrow"
+              height={16}
+              width={16}
+            />
+          </div>
+          <p>All</p>
         </div>
-        <p>All</p>
+        {click && (
+          <ul className="filter-options">
+            {options.map((option, index) => {
+              return (
+                <li key={index}>
+                  {index == 0 ? (
+                    <p
+                      onClick={resetSelectedOptions}
+                      style={{
+                        textDecoration: "underline",
+                        opacity: "30%",
+                        cursor: "pointer",
+                      }}
+                      role="button"
+                    >
+                      {option}
+                    </p>
+                  ) : (
+                    <div className="filter-items">
+                      <input
+                        id={option}
+                        type="checkbox"
+                        checked={selectedOptions.includes(option)}
+                        onChange={() => handleSelectedOptions(option)}
+                        value={option}
+                      />
+                      <label htmlFor={option}>{option}</label>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
-      {click && (
-        <ul className="filter-options">
-          {options.map((option, index) => {
-            return (
-              <li key={index}>
-                {index == 0 ? (
-                  <p
-                    onClick={resetSelectedOptions}
-                    style={{
-                      textDecoration: "underline",
-                      opacity: "30%",
-                      cursor: "pointer",
-                    }}
-                    role="button"
-                  >
-                    {option}
-                  </p>
-                ) : (
-                  <div className="filter-items">
-                    <input
-                      id={option}
-                      type="checkbox"
-                      checked={selectedOptions.includes(option)}
-                      onChange={() => handleSelectedOptions(option)}
-                      value={option}
-                    />
-                    <label htmlFor={option}>{option}</label>
-                  </div>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </div>
+      <hr />
+    </>
   );
 };
 
