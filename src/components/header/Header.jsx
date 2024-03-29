@@ -46,14 +46,14 @@ const Header = () => {
 			<section className="header-body-section">
 				<div className="company-logo">
 					<Link onClick={() => setSideNavOpen((prev) => !prev)} className="burger-icon-link" href="#">
-						<Image src={MenuBarIcon} className='burger-icon'  height={28} width={28} />
+						<Image alt="MenuBarIcon" src={MenuBarIcon} className='burger-icon'  height={28} width={28} />
 					</Link>
 					<Link href="#">
 						<Image src={Logo} alt="Company-Logo" height={36} width={36} />
 					</Link>
 
 					{sideNavOpen && <div className="header-navbar-list-cont">
-						<Image src={CloseBarIcon} onClick={() => setSideNavOpen((prev) => !prev)} className="close-icon"  />
+						<Image alt="CloseBarIcon" src={CloseBarIcon} onClick={() => setSideNavOpen((prev) => !prev)} className="close-icon"  />
 						<div className="nav-lists">
 							{navList.map((list, index) => {
 								return (
