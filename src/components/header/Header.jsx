@@ -45,9 +45,9 @@ const Header = () => {
 
 			<section className="header-body-section">
 				<div className="company-logo">
-					<Link onClick={() => setSideNavOpen((prev) => !prev)} className="burger-icon-link" href="#">
+					<div onClick={() => setSideNavOpen((prev) => !prev)} className="burger-icon-link" href="#">
 						<Image alt="MenuBarIcon" src={MenuBarIcon} className='burger-icon'  height={28} width={28} />
-					</Link>
+					</div>
 					<Link href="#">
 						<Image src={Logo} alt="Company-Logo" height={36} width={36} />
 					</Link>
