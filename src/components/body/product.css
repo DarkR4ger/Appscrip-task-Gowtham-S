@@ -107,7 +107,7 @@
 }
 
 .product-filter {
-	min-width: 300px;
+	min-width: 280px;
 	display: flex;
 	flex-direction: column;
 	gap: 28px;
@@ -130,7 +130,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-grow: 1;
-	gap: 24px;
+	gap: 18px;
 }
 
 .product-container {
@@ -202,7 +202,7 @@ hr {
 }
 
 /* tablet-responsive */
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 950px) {
 	#product-main {
 		padding-left: 32px;
 		padding-right: 32px;
